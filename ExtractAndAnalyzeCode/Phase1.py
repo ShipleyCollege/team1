@@ -1,4 +1,5 @@
-FILENAME = "../Sample Blueprint code/Branch - code"
+#FILENAME = "../Sample Blueprint code/Branch - code"
+FILENAME = "../Sample Blueprint code/Print String - GameOver - Code"
 
 ###
 #  CLASS : Contains extracted node information
@@ -42,15 +43,24 @@ class Node:
 		
 		longestLine = self.title
 		for i in range(longest ):
-			t = self.leftPins[i].name + " " + self.rightPins[i].name
+			if i < len(self.leftPins) and i < len(self.rightPins):
+				t = self.leftPins[i].name + " " + self.rightPins[i].name
+			elif i <= len(self.leftPins):
+				t = self.leftPins[i].name
+			elif i <= len(self.rightPins):
+				t = self.rightPins[i].name
+			else:
+				print("logic error!")
 			if len(longestLine) < len(t):
 				longestLine = t
 		openSCAD.append("longestLine = \"" + longestLine + "\";\n")    
 		
 		openSCAD.append("drawBase(\"" + self.title + "\");\n")
 		for i in range(longest ):
-			openSCAD.append(self.leftPins[i].writePin(i+2, "left") + "\n")
-			openSCAD.append(self.rightPins[i].writePin(i+2, "right") + "\n")
+			if i < len(self.leftPins):
+				openSCAD.append(self.leftPins[i].writePin(i+2, "left") + "\n")
+			if i < len(self.rightPins):
+				openSCAD.append(self.rightPins[i].writePin(i+2, "right") + "\n")
 			
 		outFilename = "../GeneratedCode/" + self.title + ".scad"
 		outFile = open(outFilename, "w")
@@ -67,6 +77,8 @@ class Pin:
 	def __init__(self, name, type):
 		if name == "execute" and type == "exec":
 			self.name = ""
+		elif name == "then" and type == "exec":
+			self.name = ""
 		else:
 			self.name = name.title()
 		self.type = type
@@ -74,7 +86,7 @@ class Pin:
 	def __str__(self):
 		response = "Pin Name : " + self.name + ", type : " + self.type
 		return response
-		
+				
 	def writePin(self, line, side):
 		response = "?"
 		if (self.type == 'exec') and (side == "left"):
@@ -145,6 +157,61 @@ def processBranch(lines):
 #		print(">" + line + "<");
 	print(node)
 	node.writeNode()
+
+###
+#  FUNCTION : Handle Function nodes
+###
+def processFunction(lines):	
+	node = Node("Function")
+	inObject = False
+	pinName = ""
+	pinType = ""
+	pinSide = ""	
+	for line in lines:
+		line = line.strip(" ")
+		if line.startswith("FunctionReference"):
+			functionName = getQuotedString(line)
+			node.title = functionName
+		if inObject:
+			# need to handle defaultValue=?
+			# handle advanced view better?
+			if line.startswith("PinName="):
+				print("-Name : " + line)
+				pinName = getQuotedString(line)
+			if line.startswith("PinType="):
+				print("-Type : " + line)
+				pinType = getQuotedString(line)
+			if line.startswith("Direction=EGPD_Output"):
+				print("-Direction : " + line)
+				pinSide = "Right"
+			if line.startswith("PinFriendlyName="):
+				print("Pin freindly name : " + line)
+				pinName = getQuotedString(line)
+			if line.startswith("bHidden=True"):
+				print("Pin is hidden : " + line)
+				pinSide = "" 		
+			if line.startswith("bAdvancedView=True"):
+				print("Pin only on advanced view : " + line)
+				pinSide = "" 	
+		if line.startswith("Begin Object Name="):
+			inObject = True
+			pinName = ""
+			PinType = ""
+			pinSide = "Left"			
+			print("In Object")
+		if line.startswith("End Object"):
+			inObject = False
+			if pinSide != "":
+				pin = Pin(pinName, pinType)
+				node.addPin(pin, pinSide)
+			pinName = ""
+			PinType = ""
+			pinSide = ""			
+#			print("Out Object")
+#		print(">" + line + "<");
+	print(node)
+	node.writeNode()
+
 		
 
 ###
@@ -161,6 +228,8 @@ with open(FILENAME) as f:
 	lines = f.read().splitlines()
 	if lines[0].startswith("Begin Object Class=K2Node_IfThenElse"):
 		processBranch(lines)
+	elif lines[0].startswith("Begin Object Class=K2Node_CallFunction"):
+		processFunction(lines)
 	else:
 		print()
 
