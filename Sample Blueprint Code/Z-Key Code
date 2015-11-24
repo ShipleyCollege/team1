@@ -1,0 +1,32 @@
+Begin Object Class=K2Node_InputKey Name="K2Node_InputKey_199"
+   Begin Object Class=EdGraphPin Name="EdGraphPin_23908"
+   End Object
+   Begin Object Class=EdGraphPin Name="EdGraphPin_23909"
+   End Object
+   Begin Object Class=EdGraphPin Name="EdGraphPin_23910"
+   End Object
+   Begin Object Name="EdGraphPin_23908"
+      PinName="Pressed"
+      Direction=EGPD_Output
+      PinType=(PinCategory="exec")
+   End Object
+   Begin Object Name="EdGraphPin_23909"
+      PinName="Released"
+      Direction=EGPD_Output
+      PinType=(PinCategory="exec")
+   End Object
+   Begin Object Name="EdGraphPin_23910"
+      PinName="Key"
+      Direction=EGPD_Output
+      PinType=(PinCategory="struct",PinSubCategoryObject=ScriptStruct'/Script/InputCore.Key')
+      DefaultValue="AnyKey"
+   End Object
+   InputKey=Z
+   Pins(0)=EdGraphPin'EdGraphPin_23908'
+   Pins(1)=EdGraphPin'EdGraphPin_23909'
+   Pins(2)=EdGraphPin'EdGraphPin_23910'
+   NodePosX=-176
+   NodePosY=96
+   NodeGuid=8CFFEAACE140359BAEA4C0886406A354
+End Object
+
