@@ -29,19 +29,29 @@ class Node:
 			self.rightPins.append(pin)
 			
 	def writeNode(self):
-		print("include <../OpenSCAD/BPNode.scad>;")
-		print()
+		openSCAD = []
+		openSCAD.append("include <../OpenSCAD/BPNode.scad>;")
+		openSCAD.append(" ")
 		if len(self.leftPins) > len(self.rightPins):
 			longest = len(self.leftPins) 
 		else:
 			longest = len(self.rightPins)
-		print("numLines = " + str(longest+1) + ";")
+		openSCAD.append("numLines = " + str(longest+1) + ";")
 		
-		print("longestLine = \"abcdefghijklm\";")     #  *TODO*
-		print("drawBase(\"" + self.title + "\")")
+		longestLine = self.title
 		for i in range(longest ):
-			self.leftPins[i].writePin(i+2, "left")
-			self.rightPins[i].writePin(i+2, "right")
+			t = self.leftPins[i].name + " " + self.rightPins[i].name
+			if len(longestLine) < len(t):
+				longestLine = t
+		openSCAD.append("longestLine = \"" + longestLine + "\";")    
+		
+		print("drawBase(\"" + self.title + "\");")
+		for i in range(longest ):
+			openSCAD.append(self.leftPins[i].writePin(i+2, "left"))
+			openSCAD.append(self.rightPins[i].writePin(i+2, "right"))
+			
+		
+		print(openSCAD)
 
 
 		
@@ -50,7 +60,10 @@ class Pin:
 	name = "?"
 	type = "?"
 	def __init__(self, name, type):
-		self.name = name
+		if name == "execute" and type == "exec":
+			self.name = ""
+		else:
+			self.name = name.title()
 		self.type = type
 		
 	def __str__(self):
@@ -82,7 +95,7 @@ class Pin:
 				response = "leftPin(line" + str(line) + ", \"" + self.name + "\");"
 			else:
 				response = "leftPin(line" + str(line) + ");"
-		print(response)
+		return(response)
 
 
 ###
