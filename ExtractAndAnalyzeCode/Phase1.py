@@ -27,6 +27,23 @@ class Node:
 			self.leftPins.append(pin)
 		else:
 			self.rightPins.append(pin)
+			
+	def writeNode(self):
+		print("include <../OpenSCAD/BPNode.scad>;")
+		print()
+		if len(self.leftPins) > len(self.rightPins):
+			longest = len(self.leftPins) 
+		else:
+			longest = len(self.rightPins)
+		print("numLines = " + str(longest+1) + ";")
+		
+		print("longestLine = \"abcdefghijklm\";")     #  *TODO*
+		print("drawBase(\"" + self.title + "\")")
+		for i in range(longest ):
+			self.leftPins[i].writePin(i+2, "left")
+			self.rightPins[i].writePin(i+2, "right")
+
+
 		
 		
 class Pin:
@@ -39,6 +56,33 @@ class Pin:
 	def __str__(self):
 		response = "Pin Name : " + self.name + ", type : " + self.type
 		return response
+		
+	def writePin(self, line, side):
+		response = "?"
+		if (self.type == 'exec') and (side == "left"):
+			if self.name != "":
+				response = "executePinLeftWithText(line" + str(line) + ", \"" + self.name + "\");"
+			else:
+				response = "executePinLeft(line" + str(line) + ");"
+		
+		if (self.type == 'exec') and (side == "right"):
+			if self.name != "":
+				response = "executePinRightWithText(line" + str(line) + ", \"" + self.name + "\");"
+			else:
+				response = "executePinRight(line" + str(line) + ");"
+		
+		if (self.type != 'exec') and (side == "right"):
+			if self.name != "":
+				response = "rightPin(line" + str(line) + ", \"" + self.name + "\");"
+			else:
+				response = "rightPin(line" + str(line) + ");"
+										
+		if (self.type != 'exec') and (side == "left"):
+			if self.name != "":
+				response = "leftPin(line" + str(line) + ", \"" + self.name + "\");"
+			else:
+				response = "leftPin(line" + str(line) + ");"
+		print(response)
 
 
 ###
@@ -82,6 +126,7 @@ def processBranch(lines):
 #			print("Out Object")
 #		print(">" + line + "<");
 	print(node)
+	node.writeNode()
 		
 
 ###
