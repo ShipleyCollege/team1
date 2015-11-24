@@ -30,28 +30,33 @@ class Node:
 			
 	def writeNode(self):
 		openSCAD = []
-		openSCAD.append("include <../OpenSCAD/BPNode.scad>;")
-		openSCAD.append(" ")
+		openSCAD.append("//include <../OpenSCAD/BPNode.scad>;\n")
+		openSCAD.append("include <../../ViPteam2/OpenSCAD/BPNode.scad>;\n")
+
+		openSCAD.append("\n")
 		if len(self.leftPins) > len(self.rightPins):
 			longest = len(self.leftPins) 
 		else:
 			longest = len(self.rightPins)
-		openSCAD.append("numLines = " + str(longest+1) + ";")
+		openSCAD.append("numLines = " + str(longest+1) + ";\n")
 		
 		longestLine = self.title
 		for i in range(longest ):
 			t = self.leftPins[i].name + " " + self.rightPins[i].name
 			if len(longestLine) < len(t):
 				longestLine = t
-		openSCAD.append("longestLine = \"" + longestLine + "\";")    
+		openSCAD.append("longestLine = \"" + longestLine + "\";\n")    
 		
-		print("drawBase(\"" + self.title + "\");")
+		openSCAD.append("drawBase(\"" + self.title + "\");\n")
 		for i in range(longest ):
-			openSCAD.append(self.leftPins[i].writePin(i+2, "left"))
-			openSCAD.append(self.rightPins[i].writePin(i+2, "right"))
+			openSCAD.append(self.leftPins[i].writePin(i+2, "left") + "\n")
+			openSCAD.append(self.rightPins[i].writePin(i+2, "right") + "\n")
 			
-		
-		print(openSCAD)
+		outFilename = "../GeneratedCode/" + self.title + ".scad"
+		outFile = open(outFilename, "w")
+		outFile.writelines( openSCAD )
+		outFile.close()
+		print(str(len(openSCAD)) + " lines written to " + outFilename)
 
 
 		
