@@ -5,7 +5,6 @@ Sample data for a UE4 Blueprint 'BRANCH' node is;
 
 //--------------------START----------------------------
 include <BPNode.scad>;   // needed for OpenSCAD
-
 numLines = 3;                       // Used to deterimine depth
 longestLine = "Condition False";    // Used to deterimine width
 
