@@ -2,7 +2,8 @@
 Normalize and Extract data from UE4 BP editor and write to flat file.
 
 Sample data for a UE4 Blueprint 'BRANCH' node is;
-<code>
+
+
 //--------------------START----------------------------<br>
 include <BPNode.scad>;   // needed for OpenSCAD<br>
 numLines = 3;                       // Used to deterimine depth<br>
@@ -16,7 +17,8 @@ executePinRightWithText(line2, "True");  // Draw another on the right, with text
 leftPin(line3, "Condition");        // Draw a data pin, on the left, on line 3 with text<br>
 executePinRightWithText(line3, "False");  // Draw another execute pin on right, with text<br>
 //-----------------END---------------------------------<br>
-</code>
+
+<p>
 When run through OpenSCAD, this will create an .stl file, which can then be printed on a 3D printer.
 
 Sample commands are;
