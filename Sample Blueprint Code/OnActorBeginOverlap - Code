@@ -1,0 +1,35 @@
+Begin Object Class=K2Node_ActorBoundEvent Name="K2Node_ActorBoundEvent_1"
+   Begin Object Class=EdGraphPin Name="EdGraphPin_12567"
+   End Object
+   Begin Object Class=EdGraphPin Name="EdGraphPin_12566"
+   End Object
+   Begin Object Class=EdGraphPin Name="EdGraphPin_12565"
+   End Object
+   Begin Object Name="EdGraphPin_12567"
+      PinName="OtherActor"
+      PinToolTip="Other Actor\nActor Reference"
+      Direction=EGPD_Output
+      PinType=(PinCategory="object",PinSubCategoryObject=Class'/Script/Engine.Actor')
+   End Object
+   Begin Object Name="EdGraphPin_12566"
+      PinName="then"
+      Direction=EGPD_Output
+      PinType=(PinCategory="exec")
+   End Object
+   Begin Object Name="EdGraphPin_12565"
+      PinName="OutputDelegate"
+      Direction=EGPD_Output
+      PinType=(PinCategory="delegate",PinSubCategoryObject=Function'/Temp/Untitled_1.SKEL_Untitled_C:BndEvt__TriggerBox_1_K2Node_ActorBoundEvent_0_ActorBeginOverlapSignature__DelegateSignature')
+   End Object
+   DelegatePropertyName="OnActorBeginOverlap"
+   EventOwner=TriggerBox'/Temp/Untitled_1.Untitled_1:PersistentLevel.TriggerBox_1'
+   EventSignatureName="ActorBeginOverlapSignature__DelegateSignature"
+   EventSignatureClass=Class'/Script/Engine.Actor'
+   bInternalEvent=True
+   CustomFunctionName="BndEvt__TriggerBox_1_K2Node_ActorBoundEvent_0_ActorBeginOverlapSignature__DelegateSignature"
+   Pins(0)=EdGraphPin'EdGraphPin_12565'
+   Pins(1)=EdGraphPin'EdGraphPin_12566'
+   Pins(2)=EdGraphPin'EdGraphPin_12567'
+   NodePosY=256
+   NodeGuid=27DEA78B4D480920BF02C6AC71B2D960
+End Object
