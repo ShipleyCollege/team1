@@ -1,0 +1,39 @@
+Begin Object Class=K2Node_CallFunction Name="K2Node_CallFunction_2413"
+   Begin Object Class=EdGraphPin Name="EdGraphPin_23163"
+   End Object
+   Begin Object Class=EdGraphPin Name="EdGraphPin_23162"
+   End Object
+   Begin Object Class=EdGraphPin Name="EdGraphPin_23161"
+   End Object
+   Begin Object Class=EdGraphPin Name="EdGraphPin_23160"
+   End Object
+   Begin Object Name="EdGraphPin_23163"
+      PinName="WorldContextObject"
+      PinType=(PinCategory="object",PinSubCategoryObject=Class'/Script/CoreUObject.Object')
+      bHidden=True
+   End Object
+   Begin Object Name="EdGraphPin_23162"
+      PinName="self"
+      PinFriendlyName="Target"
+      PinType=(PinCategory="object",PinSubCategoryObject=Class'/Script/Engine.GameplayStatics')
+      DefaultObject=Default__GameplayStatics
+      bHidden=True
+   End Object
+   Begin Object Name="EdGraphPin_23161"
+      PinName="then"
+      Direction=EGPD_Output
+      PinType=(PinCategory="exec")
+   End Object
+   Begin Object Name="EdGraphPin_23160"
+      PinName="execute"
+      PinType=(PinCategory="exec")
+   End Object
+   FunctionReference=(MemberParent=Class'/Script/Engine.GameplayStatics',MemberName="ClearSoundMixModifiers")
+   Pins(0)=EdGraphPin'EdGraphPin_23160'
+   Pins(1)=EdGraphPin'EdGraphPin_23161'
+   Pins(2)=EdGraphPin'EdGraphPin_23162'
+   Pins(3)=EdGraphPin'EdGraphPin_23163'
+   NodePosX=-368
+   NodePosY=-80
+   NodeGuid=194231FE4378DC6B82F76095522AE771
+End Object
