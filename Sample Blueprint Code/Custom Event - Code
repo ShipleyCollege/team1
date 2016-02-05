@@ -1,0 +1,22 @@
+Begin Object Class=K2Node_CustomEvent Name="K2Node_CustomEvent_16"
+   Begin Object Class=EdGraphPin Name="EdGraphPin_23045"
+   End Object
+   Begin Object Class=EdGraphPin Name="EdGraphPin_23044"
+   End Object
+   Begin Object Name="EdGraphPin_23045"
+      PinName="then"
+      Direction=EGPD_Output
+      PinType=(PinCategory="exec")
+   End Object
+   Begin Object Name="EdGraphPin_23044"
+      PinName="OutputDelegate"
+      Direction=EGPD_Output
+      PinType=(PinCategory="delegate",PinSubCategoryMemberReference=(MemberParent=BlueprintGeneratedClass'/Game/ThirdPersonBP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C',MemberName="Custom Event",MemberGuid=DF0178B44D722DC6D61C46BDAC70893E))
+   End Object
+   CustomFunctionName="Custom Event"
+   Pins(0)=EdGraphPin'EdGraphPin_23044'
+   Pins(1)=EdGraphPin'EdGraphPin_23045'
+   NodePosX=-384
+   NodePosY=-16
+   NodeGuid=DF0178B44D722DC6D61C46BDAC70893E
+End Object

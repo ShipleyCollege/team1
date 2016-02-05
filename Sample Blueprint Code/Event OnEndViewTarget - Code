@@ -1,0 +1,32 @@
+Begin Object Class=K2Node_Event Name="K2Node_Event_138"
+   Begin Object Class=EdGraphPin Name="EdGraphPin_23011"
+   End Object
+   Begin Object Class=EdGraphPin Name="EdGraphPin_23010"
+   End Object
+   Begin Object Class=EdGraphPin Name="EdGraphPin_23009"
+   End Object
+   Begin Object Name="EdGraphPin_23011"
+      PinName="PC"
+      PinToolTip="PC\nPlayer Controller Reference"
+      Direction=EGPD_Output
+      PinType=(PinCategory="object",PinSubCategoryObject=Class'/Script/Engine.PlayerController')
+   End Object
+   Begin Object Name="EdGraphPin_23010"
+      PinName="then"
+      Direction=EGPD_Output
+      PinType=(PinCategory="exec")
+   End Object
+   Begin Object Name="EdGraphPin_23009"
+      PinName="OutputDelegate"
+      Direction=EGPD_Output
+      PinType=(PinCategory="delegate",PinSubCategoryMemberReference=(MemberParent=Class'/Script/Engine.Actor',MemberName="K2_OnEndViewTarget"))
+   End Object
+   EventReference=(MemberParent=Class'/Script/Engine.Actor',MemberName="K2_OnEndViewTarget")
+   bOverrideFunction=True
+   Pins(0)=EdGraphPin'EdGraphPin_23009'
+   Pins(1)=EdGraphPin'EdGraphPin_23010'
+   Pins(2)=EdGraphPin'EdGraphPin_23011'
+   NodePosX=-384
+   NodePosY=-144
+   NodeGuid=875AA1404AA8CBB0B4D6D0BC08379830
+End Object

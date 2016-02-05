@@ -1,0 +1,51 @@
+Begin Object Class=K2Node_CallFunction Name="K2Node_CallFunction_2391"
+   Begin Object Class=EdGraphPin Name="EdGraphPin_22979"
+   End Object
+   Begin Object Class=EdGraphPin Name="EdGraphPin_22978"
+   End Object
+   Begin Object Class=EdGraphPin Name="EdGraphPin_22977"
+   End Object
+   Begin Object Class=EdGraphPin Name="EdGraphPin_22976"
+   End Object
+   Begin Object Class=EdGraphPin Name="EdGraphPin_22975"
+   End Object
+   Begin Object Name="EdGraphPin_22979"
+      PinName="InSoundMixModifier"
+      PinToolTip="In Sound Mix Modifier\nSound Mix Reference"
+      PinType=(PinCategory="object",PinSubCategoryObject=Class'/Script/Engine.SoundMix')
+   End Object
+   Begin Object Name="EdGraphPin_22978"
+      PinName="WorldContextObject"
+      PinToolTip="World Context Object\nObject Reference"
+      PinType=(PinCategory="object",PinSubCategoryObject=Class'/Script/CoreUObject.Object')
+      bHidden=True
+   End Object
+   Begin Object Name="EdGraphPin_22977"
+      PinName="self"
+      PinFriendlyName="Target"
+      PinToolTip="Target\nGameplay Statics Reference"
+      PinType=(PinCategory="object",PinSubCategoryObject=Class'/Script/Engine.GameplayStatics')
+      DefaultObject=Default__GameplayStatics
+      bHidden=True
+   End Object
+   Begin Object Name="EdGraphPin_22976"
+      PinName="then"
+      PinToolTip="\nExec"
+      Direction=EGPD_Output
+      PinType=(PinCategory="exec")
+   End Object
+   Begin Object Name="EdGraphPin_22975"
+      PinName="execute"
+      PinToolTip="\nExec"
+      PinType=(PinCategory="exec")
+   End Object
+   FunctionReference=(MemberParent=Class'/Script/Engine.GameplayStatics',MemberName="PopSoundMixModifier")
+   Pins(0)=EdGraphPin'EdGraphPin_22975'
+   Pins(1)=EdGraphPin'EdGraphPin_22976'
+   Pins(2)=EdGraphPin'EdGraphPin_22977'
+   Pins(3)=EdGraphPin'EdGraphPin_22978'
+   Pins(4)=EdGraphPin'EdGraphPin_22979'
+   NodePosX=-256
+   NodePosY=-128
+   NodeGuid=47E8C42845ED605E4EEF48AB1ECC0EDD
+End Object
