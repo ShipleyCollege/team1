@@ -1,10 +1,9 @@
-#FILENAME = "../Sample Blueprint code/Branch - code"
-FILENAME = "../Sample Blueprint code/Print String - GameOver - Code"
-FILENAME = 
+FILENAME = "../Code Output/Normalised Code"
 
 ###
 #  CLASS : Contains extracted node information
 ###
+
 class Node:
 	title = "unknown"
 	leftPins = []
