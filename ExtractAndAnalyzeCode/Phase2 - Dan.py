@@ -1,8 +1,9 @@
-FILENAME = "../Code Output"
+FILENAME = "../Code Output/Normalised Code"
 
 ###
 #  CLASS : Contains extracted node information
 ###
+
 class Node:
 	title = "unknown"
 	leftPins = []
