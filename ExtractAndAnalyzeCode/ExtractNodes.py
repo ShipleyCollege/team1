@@ -41,7 +41,7 @@ def DoIt(buildMode):
     print("Nodes Extracted : " + str(nodeNumber))
     print("Nodes not recognized : " + str(nrc))
 
-    #removeTempNodes()
+    removeTempNodes()
 
 
 
