@@ -1,0 +1,10 @@
+Node List
+(Take things we used)
+Title code as "Node Name - Code"
+Screenshots as "Node Name - Screenshot.png"
+
+Math
+  Boolean
+  Float
+  Integer
+  Vector

@@ -1,0 +1,35 @@
+Begin Object Class=K2Node_CallFunction Name="K2Node_CallFunction_2101"
+   Begin Object Class=EdGraphPin Name="EdGraphPin_14989"
+   End Object
+   Begin Object Class=EdGraphPin Name="EdGraphPin_14988"
+   End Object
+   Begin Object Class=EdGraphPin Name="EdGraphPin_14987"
+   End Object
+   Begin Object Name="EdGraphPin_14989"
+      PinName="ReturnValue"
+      PinToolTip="Return Value\nString\n\nThe literal string"
+      Direction=EGPD_Output
+      PinType=(PinCategory="string")
+   End Object
+   Begin Object Name="EdGraphPin_14988"
+      PinName="Value"
+      PinToolTip="Value\nString\n\nvalue to set the string to"
+      PinType=(PinCategory="string")
+   End Object
+   Begin Object Name="EdGraphPin_14987"
+      PinName="self"
+      PinFriendlyName="Target"
+      PinToolTip="Target\nKismet System Library Reference"
+      PinType=(PinCategory="object",PinSubCategoryObject=Class'/Script/Engine.KismetSystemLibrary')
+      DefaultObject=Default__KismetSystemLibrary
+      bHidden=True
+   End Object
+   bIsPureFunc=True
+   FunctionReference=(MemberParentClass=Class'/Script/Engine.KismetSystemLibrary',MemberName="MakeLiteralString")
+   Pins(0)=EdGraphPin'EdGraphPin_14987'
+   Pins(1)=EdGraphPin'EdGraphPin_14988'
+   Pins(2)=EdGraphPin'EdGraphPin_14989'
+   NodePosX=320
+   NodePosY=208
+   NodeGuid=DD2D0FF1E649DEE8FE1C8A89E8B46BD5
+End Object

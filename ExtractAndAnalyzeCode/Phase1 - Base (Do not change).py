@@ -1,5 +1,4 @@
-#FILENAME = "../Sample Blueprint code/Branch - code"
-FILENAME = "../Sample Blueprint code/Print String - GameOver - Code"
+FILENAME = "../Code Output"
 
 ###
 #  CLASS : Contains extracted node information
@@ -223,18 +222,15 @@ def getQuotedString(string):
 ###
 # Read in Blueprint code and extract information we need.
 ###		
-def doIt(filename):	
-	print("Converting " + filename)	
-	with open(filename) as f:
-		lines = f.read().splitlines()
-		if lines[0].startswith("Begin Object Class=K2Node_IfThenElse"):
-			processBranch(lines)
-		elif lines[0].startswith("Begin Object Class=K2Node_CallFunction"):
-			processFunction(lines)
-		else:
-			print()
-			
-#doIt(FILENAME)
+		
+with open(FILENAME) as f:
+	lines = f.read().splitlines()
+	if lines[0].startswith("Begin Object Class=K2Node_IfThenElse"):
+		processBranch(lines)
+	elif lines[0].startswith("Begin Object Class=K2Node_CallFunction"):
+		processFunction(lines)
+	else:
+		print()
 
 
 
