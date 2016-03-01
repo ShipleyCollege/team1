@@ -1,3 +1,6 @@
+# TODO - have blank exec pins
+
+
 #FILENAME = "../Sample Blueprint code/Branch - code"
 FILENAME = "../Sample Blueprint code/Print String - GameOver - Code"
 
@@ -11,6 +14,8 @@ class Node:
 	
 	def __init__(self, title):
 		self.title = title
+		self.leftPins = []
+		self.rightPins = []
 		
 	def __str__(self):
 		response = "Node"
@@ -30,6 +35,9 @@ class Node:
 			self.rightPins.append(pin)
 			
 	def writeNode(self):
+		self.leftPins = list(reversed(self.leftPins))   
+		self.rightPins = list(reversed(self.rightPins))
+		
 		openSCAD = []
 		openSCAD.append("//include <../OpenSCAD/BPNode.scad>;\n")
 		openSCAD.append("include <../../ViPteam2/OpenSCAD/BPNode.scad>;\n")
@@ -42,10 +50,11 @@ class Node:
 		openSCAD.append("numLines = " + str(longest+1) + ";\n")
 		
 		longestLine = self.title
+		print(self.title, len(self.leftPins), len(self.rightPins))
 		for i in range(longest ):
 			if i < len(self.leftPins) and i < len(self.rightPins):
-				t = self.leftPins[i].name + " " + self.rightPins[i].name
-			elif i <= len(self.leftPins):
+				t = self.leftPins[i].name + "  " + self.rightPins[i].name
+			elif len(self.leftPins) > 0 and i <= len(self.leftPins):
 				t = self.leftPins[i].name
 			elif i <= len(self.rightPins):
 				t = self.rightPins[i].name
@@ -93,13 +102,13 @@ class Pin:
 			if self.name != "":
 				response = "executePinLeftWithText(line" + str(line) + ", \"" + self.name + "\");"
 			else:
-				response = "executePinLeft(line" + str(line) + ");"
+				response = "executePinLeftWithText(line" + str(line) + ",\"\");"
 		
 		if (self.type == 'exec') and (side == "right"):
 			if self.name != "":
 				response = "executePinRightWithText(line" + str(line) + ", \"" + self.name + "\");"
 			else:
-				response = "executePinRight(line" + str(line) + ");"
+				response = "executePinRightWithText(line" + str(line) + ",\"\");"
 		
 		if (self.type != 'exec') and (side == "right"):
 			if self.name != "":
@@ -212,7 +221,46 @@ def processFunction(lines):
 	print(node)
 	node.writeNode()
 
-		
+###
+#  FUNCTION : Handle Function nodes
+###
+def processVariable(lines):	
+	node = Node("Variable")
+	inObject = False
+	pinName = ""
+	pinType = ""
+	pinSide = ""	
+	for line in lines:
+		line = line.strip(" ")
+		if line.startswith("PinFriendlyName"):
+			functionName = getQuotedString(line)
+			node.title = functionName
+	print(node)
+	node.writeNode()
+
+
+
+###
+#  FUNCTION : Handle Branch nodes
+###
+def processKey(lines):	
+	node = Node("Key Event ")	
+	
+	for line in lines:
+		line = line.strip(" ")
+		if line.startswith("InputKey="):
+			keyName = line[line.index('InputKey=')+9]
+			node.title = "Key Event : " + keyName
+	
+	pin1 = Pin('Pressed', 'exec')
+	node.addPin(pin1, 'Right')
+	pin2 = Pin('Released', 'exec')
+	node.addPin(pin2, 'Right')	
+
+
+	print(node)
+	node.writeNode()
+
 
 ###
 #  FUNCTION : get string between quotes
@@ -231,8 +279,17 @@ def doIt(filename):
 			processBranch(lines)
 		elif lines[0].startswith("Begin Object Class=K2Node_CallFunction"):
 			processFunction(lines)
+		elif lines[0].startswith("Begin Object Class=K2Node_Literal Name="):
+			processVariable(lines)
+		elif lines[0].startswith("Begin Object Class=K2Node_VariableSet"):
+				processVariable(lines)
+		elif lines[0].startswith("Begin Object Class=K2Node_VariableGet"):
+				processVariable(lines)
+		elif lines[0].startswith("Begin Object Class=K2Node_InputKey"):
+			processKey(lines)
 		else:
-			print()
+			print("\n======\nNode not recognised\n=====\n")
+		print(" ")
 			
 #doIt(FILENAME)
 
