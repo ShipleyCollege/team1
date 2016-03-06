@@ -1,4 +1,4 @@
-
+from Utilities import addSpaces
 		
 def writePin(self, line, side):
 	response = " "
@@ -9,9 +9,9 @@ def writePin(self, line, side):
 	else:
 		sign = "-"
 		
-	response += "// Pin name : " + self.name + ", pin side : " + side + ", pin line : " + str(line) + ", pin type : " + self.pinType + "\n"	
+	response += "// Pin name : " + addSpaces(self.name) + ", pin side : " + side + ", pin line : " + str(line) + ", pin type : " + self.pinType + "\n"	
 	if (self.name != "") :
-		response += "translate([0, " + sign + "lineWidth * " + str(line-1) + ", 0])\n    rotate([180,180,90]) \n printTextAndBraille(\"" + self.name + "\");\n"
+		response += "translate([0, " + sign + "lineWidth * " + str(line-1) + ", 0])\n    rotate([180,180,90]) \n printTextAndBraille(\"" + addSpaces(self.name) + "\");\n"
 
 	if sign == "-":
 		line += 2

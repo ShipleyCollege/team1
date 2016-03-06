@@ -1,7 +1,7 @@
+from Utilities import addSpaces
+import os.path
 
-
-
-def writeNode(self, buildMode):
+def writeNode(self, buildMode, nodeNumber):
 
 	self.leftPins = list(reversed(self.leftPins))   
 	self.rightPins = list(reversed(self.rightPins))
@@ -24,9 +24,8 @@ def writeNode(self, buildMode):
 		
 	openSCAD.append("lineWidth = 15;\n")  
 		
-#	openSCAD.append("drawBase(\"" + self.title + "\");\n")
-	openSCAD.append("translate([0, lineWidth * 0, 0])\n        rotate([180,180,90]) \n printTextAndBraille(\"" + self.title + "\");\n")
-
+#	openSCAD.append("drawBase(\"" + addSpaces(self.title) + "\");\n")
+	openSCAD.append("translate([0, lineWidth * 0, 0])\n        rotate([180,180,90]) \n printTextAndBraille(\"" + addSpaces(self.title) + "\");\n")
 
 	for i in range(longest ):
 		if i < len(self.leftPins):
@@ -34,7 +33,10 @@ def writeNode(self, buildMode):
 		if i < len(self.rightPins):
 			openSCAD.append(self.rightPins[i].writePin(i+2, "right", buildMode) + "\n")
 		
-	outFilename = "../GeneratedCode/" + self.title + ".scad"
+	outFilename = "../GeneratedCode/" + nodeNumber + self.title + ".scad"
+	if (os.path.isfile(outFilename) ):
+		outFilename = "../GeneratedCode/" + nodeNumber + self.title + "Alt" + ".scad"
+
 	outFile = open(outFilename, "w")
 	outFile.writelines( openSCAD )
 	outFile.close()

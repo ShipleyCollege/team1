@@ -1,3 +1,3 @@
 import ExtractNodes
 
-ExtractNodes.DoIt("ExplodedLego")
+ExtractNodes.DoIt("ExplodedLego", debug=False)

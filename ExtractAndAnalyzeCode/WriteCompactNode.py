@@ -1,5 +1,7 @@
+from Utilities import addSpaces
+import os.path
 
-def writeNode(self, buildMode):
+def writeNode(self, buildMode, nodeNumber):
 
 	self.leftPins = list(reversed(self.leftPins))   
 	self.rightPins = list(reversed(self.rightPins))
@@ -30,14 +32,16 @@ def writeNode(self, buildMode):
 			longestLine = t
 	openSCAD.append("longestLine = \"" + longestLine + "\";\n")    
 				
-	openSCAD.append("drawBase(\"" + self.title + "\");\n")
+	openSCAD.append("drawBase(\"" + addSpaces(self.title) + "\");\n")
 	for i in range(longest ):
 		if i < len(self.leftPins):
 			openSCAD.append(self.leftPins[i].writePin(i+2, "left", buildMode) + "\n")
 		if i < len(self.rightPins):
 			openSCAD.append(self.rightPins[i].writePin(i+2, "right", buildMode) + "\n")
 		
-	outFilename = "../GeneratedCode/" + self.title + ".scad"
+	outFilename = "../GeneratedCode/" + nodeNumber + self.title + ".scad"
+	if (os.path.isfile(outFilename) ):
+		outFilename = "../GeneratedCode/" + nodeNumber + self.title + "Alt" + ".scad"
 	outFile = open(outFilename, "w")
 	outFile.writelines( openSCAD )
 	outFile.close()

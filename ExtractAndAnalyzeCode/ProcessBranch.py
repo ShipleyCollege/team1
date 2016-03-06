@@ -5,7 +5,7 @@ from Utilities import getQuotedString
 ###
 #  FUNCTION : Handle Branch nodes
 ###
-def processBranch(lines, buildMode):	
+def processBranch(lines, buildMode, nodeNumber):
 	node = Node("Branch", buildMode)
 	inObject = False
 	pinName = ""
@@ -43,4 +43,4 @@ def processBranch(lines, buildMode):
 #			print("Out Object")
 #		print(">" + line + "<");
 	print(node)
-	node.writeNode()
+	node.writeNode(nodeNumber)

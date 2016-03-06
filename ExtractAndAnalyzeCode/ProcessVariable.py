@@ -6,7 +6,7 @@ from Utilities import getQuotedString
 ###
 #  FUNCTION : Handle Variable nodes
 ###
-def processVariable(lines, buildMode):	
+def processVariable(lines, buildMode, nodeNumber):
 	node = Node("Variable", buildMode)
 	inObject = False
 	pinName = ""
@@ -18,5 +18,5 @@ def processVariable(lines, buildMode):
 			functionName = getQuotedString(line)
 			node.title = functionName
 	print(node)
-	node.writeNode()
+	node.writeNode(nodeNumber)
 

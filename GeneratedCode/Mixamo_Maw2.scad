@@ -1,14 +1,11 @@
-//include <../OpenScad/TextAndBrailleLegoBlock.scad>
-//include <../openSCADLibs/lego_brick_builder.scad> 
-//include <../openSCAD/BPNode.scad> 
-//include <../openSCADLibs/lego_brick_builder.scad> 
-//include <../openSCAD/Pin.scad> 
-include <../../ViPteam2/OpenSCAD/TextAndBrailleLegoBlock.scad>
-include <../../ViPteam2/openSCADLibs/lego_brick_builder.scad> 
-include <../../ViPteam2/openSCAD/BPNode.scad> 
-include <../../ViPteam2/openSCADLibs/lego_brick_builder.scad> 
-include <../../ViPteam2/openSCAD/Pin.scad> 
+//include <../OpenSCAD/BPNode.scad>  
+//include <../OpenSCAD/Pin.scad>  
+//include <../OpenSCAD/brailleAndText.scad> 
+include <../../ViPteam2/openSCAD/BPNode.scad>  
+include <../../ViPteam2/openSCAD/Pin.scad>  
+include <../../ViPtest2/openSCAD/brailleAndText.scad> 
 
 lineWidth = 15;
-translate([0, 0, 0])
-    brickAndText("Mixamo_Maw2");
+translate([0, lineWidth * 0, 0])
+        rotate([180,180,90]) 
+ printTextAndBraille("Mixamo_Maw2");

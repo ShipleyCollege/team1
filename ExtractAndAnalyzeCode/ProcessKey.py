@@ -6,7 +6,7 @@ from Utilities import getQuotedString
 ###
 #  FUNCTION : Handle Branch nodes
 ###
-def processKey(lines, buildMode):	
+def processKey(lines, buildMode, nodeNumber):	
 	node = Node("Key Event ", buildMode)	
 	
 	for line in lines:
@@ -22,4 +22,4 @@ def processKey(lines, buildMode):
 
 
 	print(node)
-	node.writeNode()
+	node.writeNode(nodeNumber)

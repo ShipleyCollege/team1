@@ -1,3 +1,3 @@
 import ExtractNodes
 
-ExtractNodes.DoIt("Compact")
+ExtractNodes.DoIt("Compact", debug=False)

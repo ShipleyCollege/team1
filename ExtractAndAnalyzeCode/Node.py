@@ -2,7 +2,6 @@ import WriteCompactNode
 import WriteExplodedNode
 import WriteExplodedLegoNode
 
-
 ###
 #  CLASS : Contains extracted node information
 ###
@@ -34,11 +33,11 @@ class Node:
 		else:
 			self.rightPins.append(pin)
 	
-	def writeNode(self):
+	def writeNode(self, nodeNumber):
 		if self.buildMode == "Compact":	
-			WriteCompactNode.writeNode(self, self.buildMode)
+			WriteCompactNode.writeNode(self, self.buildMode, nodeNumber)
 		elif self.buildMode == "ExplodedLego":	
-			WriteExplodedLegoNode.writeNode(self, self.buildMode)
+			WriteExplodedLegoNode.writeNode(self, self.buildMode, nodeNumber)
 		else:
-			WriteExplodedNode.writeNode(self, self.buildMode)
+			WriteExplodedNode.writeNode(self, self.buildMode, nodeNumber)
 				
