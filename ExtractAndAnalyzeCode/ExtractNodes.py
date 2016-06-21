@@ -7,7 +7,13 @@ import BuildNode
 #INPUT_FILENAME = "../Sample Blueprint code/SpawnObjectsWithForLoop - Code.txt";
 #INPUT_FILENAME = "../Sample Blueprint code/SpawnRoundTargetPoint - Code.txt";
 #INPUT_FILENAME = "../Sample Blueprint code/SpawnRoundTargetPointV2 - Code.txt";
-INPUT_FILENAME = "../Sample Blueprint code/SpawnRoundTargetPointV3 - Code.txt";
+#INPUT_FILENAME = "../Sample Blueprint code/SpawnRoundTargetPointV3 - Code.txt";
+#INPUT_FILENAME = "../Sample Blueprint code/JISCTest1.txt";
+#INPUT_FILENAME = "../Sample Blueprint code/ResetLevelAfterTimeout.txt";
+INPUT_FILENAME = "../Sample Blueprint code/Randomly Spawn Sound Objects - Code.txt";
+
+
+
 
 WORK_FOLDERNAME = "../Sample Blueprint code/Temp";
 

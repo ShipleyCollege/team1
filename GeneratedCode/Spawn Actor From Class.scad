@@ -9,13 +9,8 @@ lineWidth = 15;
 translate([0, lineWidth * 0, 0])
         rotate([180,180,90]) 
  printTextAndBraille("Spawn Actor From Class");
- // Pin name : Instigator, pin side : left, pin line : 2, pin type : object
-translate([0, -lineWidth * 1, 0])
-    rotate([180,180,90]) 
- printTextAndBraille("Instigator");
-translate([-12,  -lineWidth * 2, 0]) {
-        pin(4, 4, 0);
-}
+
+
  // Pin name : Return Value, pin side : right, pin line : 2, pin type : object
 translate([0, +lineWidth * 1, 0])
     rotate([180,180,90]) 

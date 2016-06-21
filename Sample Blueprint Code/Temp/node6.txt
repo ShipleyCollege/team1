@@ -1,0 +1,40 @@
+Begin Object Class=K2Node_ExecutionSequence Name="K2Node_ExecutionSequence_8"
+   Begin Object Class=EdGraphPin Name="EdGraphPin_9694"
+   End Object
+   Begin Object Class=EdGraphPin Name="EdGraphPin_9695"
+   End Object
+   Begin Object Class=EdGraphPin Name="EdGraphPin_9696"
+   End Object
+   Begin Object Class=EdGraphPin Name="EdGraphPin_9697"
+   End Object
+   Begin Object Name="EdGraphPin_9694"
+      PinName="execute"
+      PinType=(PinCategory="exec")
+      LinkedTo(0)=EdGraphPin'K2Node_Event_157.EdGraphPin_10300'
+   End Object
+   Begin Object Name="EdGraphPin_9695"
+      PinName="then_0"
+      Direction=EGPD_Output
+      PinType=(PinCategory="exec")
+      LinkedTo(0)=EdGraphPin'K2Node_MacroInstance_148.EdGraphPin_10353'
+   End Object
+   Begin Object Name="EdGraphPin_9696"
+      PinName="then_1"
+      Direction=EGPD_Output
+      PinType=(PinCategory="exec")
+      LinkedTo(0)=EdGraphPin'K2Node_MacroInstance_47.EdGraphPin_10371'
+   End Object
+   Begin Object Name="EdGraphPin_9697"
+      PinName="then_2"
+      Direction=EGPD_Output
+      PinType=(PinCategory="exec")
+      LinkedTo(0)=EdGraphPin'K2Node_MacroInstance_64.EdGraphPin_10413'
+   End Object
+   Pins(0)=EdGraphPin'EdGraphPin_9694'
+   Pins(1)=EdGraphPin'EdGraphPin_9695'
+   Pins(2)=EdGraphPin'EdGraphPin_9696'
+   Pins(3)=EdGraphPin'EdGraphPin_9697'
+   NodePosX=128
+   NodePosY=2448
+   NodeGuid=228FD714584BFA8EE366A7BE6BFCF8E0
+End Object

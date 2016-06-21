@@ -3,6 +3,8 @@ import glob
 import Phase2
 
 
+# use ExtractNodes to point at source file
+
 INPUT_FILENAME = "../Sample Blueprint code/SimpleMoveToActor-Network - Code.txt";
 WORK_FOLDERNAME = "../Sample Blueprint code/Temp";
 

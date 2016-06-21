@@ -1,0 +1,48 @@
+Begin Object Class=K2Node_CallFunction Name="K2Node_CallFunction_4080"
+   Begin Object Class=EdGraphPin Name="EdGraphPin_9622"
+   End Object
+   Begin Object Class=EdGraphPin Name="EdGraphPin_9623"
+   End Object
+   Begin Object Class=EdGraphPin Name="EdGraphPin_9624"
+   End Object
+   Begin Object Class=EdGraphPin Name="EdGraphPin_9625"
+   End Object
+   Begin Object Class=EdGraphPin Name="EdGraphPin_9626"
+   End Object
+   Begin Object Name="EdGraphPin_9622"
+      PinName="execute"
+      PinType=(PinCategory="exec")
+      LinkedTo(0)=EdGraphPin'K2Node_MacroInstance_148.EdGraphPin_10356'
+   End Object
+   Begin Object Name="EdGraphPin_9623"
+      PinName="then"
+      Direction=EGPD_Output
+      PinType=(PinCategory="exec")
+      LinkedTo(0)=EdGraphPin'K2Node_SpawnActorFromClass_26.EdGraphPin_10305'
+   End Object
+   Begin Object Name="EdGraphPin_9624"
+      PinName="self"
+      PinFriendlyName="Target"
+      PinType=(PinCategory="object",PinSubCategory="self")
+   End Object
+   Begin Object Name="EdGraphPin_9625"
+      PinName="Target"
+      PinType=(PinCategory="object",PinSubCategoryObject=Class'/Script/Engine.Actor')
+      LinkedTo(0)=EdGraphPin'K2Node_Literal_110.EdGraphPin_9113'
+   End Object
+   Begin Object Name="EdGraphPin_9626"
+      PinName="Position"
+      Direction=EGPD_Output
+      PinType=(PinCategory="struct",PinSubCategoryObject=ScriptStruct'/Script/CoreUObject.Transform')
+      LinkedTo(0)=EdGraphPin'K2Node_SpawnActorFromClass_26.EdGraphPin_10308'
+   End Object
+   FunctionReference=(MemberName="GetRandomPosition",MemberGuid=871AA858B741D31990223F860A86E391,bSelfContext=True)
+   Pins(0)=EdGraphPin'EdGraphPin_9622'
+   Pins(1)=EdGraphPin'EdGraphPin_9623'
+   Pins(2)=EdGraphPin'EdGraphPin_9624'
+   Pins(3)=EdGraphPin'EdGraphPin_9625'
+   Pins(4)=EdGraphPin'EdGraphPin_9626'
+   NodePosX=544
+   NodePosY=2448
+   NodeGuid=30E331302048D39041C36388CB3F9B92
+End Object

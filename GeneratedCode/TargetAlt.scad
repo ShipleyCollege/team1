@@ -8,4 +8,4 @@ include <../../ViPtest2/openSCAD/brailleAndText.scad>
 lineWidth = 15;
 translate([0, lineWidth * 0, 0])
         rotate([180,180,90]) 
- printTextAndBraille("Target");
+ printTextAndBraille("Target1");

@@ -1,0 +1,24 @@
+Begin Object Class=K2Node_Event Name="K2Node_Event_157"
+   Begin Object Class=EdGraphPin Name="EdGraphPin_10299"
+   End Object
+   Begin Object Class=EdGraphPin Name="EdGraphPin_10300"
+   End Object
+   Begin Object Name="EdGraphPin_10299"
+      PinName="OutputDelegate"
+      Direction=EGPD_Output
+      PinType=(PinCategory="delegate",PinSubCategoryMemberReference=(MemberParent=Class'/Script/Engine.Actor',MemberName="ReceiveBeginPlay"))
+   End Object
+   Begin Object Name="EdGraphPin_10300"
+      PinName="then"
+      Direction=EGPD_Output
+      PinType=(PinCategory="exec")
+      LinkedTo(0)=EdGraphPin'K2Node_ExecutionSequence_8.EdGraphPin_9694'
+   End Object
+   EventReference=(MemberParent=Class'/Script/Engine.Actor',MemberName="ReceiveBeginPlay")
+   bOverrideFunction=True
+   Pins(0)=EdGraphPin'EdGraphPin_10299'
+   Pins(1)=EdGraphPin'EdGraphPin_10300'
+   NodePosX=-64
+   NodePosY=2448
+   NodeGuid=0CC3469AE741A589AF860098FC239B44
+End Object

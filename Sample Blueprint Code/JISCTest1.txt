@@ -1,0 +1,150 @@
+Begin Object Class=K2Node_InputKey Name="K2Node_InputKey_203"
+   Begin Object Class=EdGraphPin Name="EdGraphPin_24494"
+   End Object
+   Begin Object Class=EdGraphPin Name="EdGraphPin_24495"
+   End Object
+   Begin Object Class=EdGraphPin Name="EdGraphPin_24496"
+   End Object
+   Begin Object Name="EdGraphPin_24494"
+      PinName="Pressed"
+      Direction=EGPD_Output
+      PinType=(PinCategory="exec")
+      LinkedTo(0)=EdGraphPin'K2Node_SpawnActorFromClass_3.EdGraphPin_24547'
+   End Object
+   Begin Object Name="EdGraphPin_24495"
+      PinName="Released"
+      Direction=EGPD_Output
+      PinType=(PinCategory="exec")
+   End Object
+   Begin Object Name="EdGraphPin_24496"
+      PinName="Key"
+      Direction=EGPD_Output
+      PinType=(PinCategory="struct",PinSubCategoryObject=ScriptStruct'/Script/InputCore.Key')
+      DefaultValue="AnyKey"
+   End Object
+   InputKey=Z
+   Pins(0)=EdGraphPin'EdGraphPin_24494'
+   Pins(1)=EdGraphPin'EdGraphPin_24495'
+   Pins(2)=EdGraphPin'EdGraphPin_24496'
+   NodePosX=-320
+   NodeGuid=EAD31FD49B40DBD0E4A3A7954324316E
+End Object
+Begin Object Class=K2Node_Literal Name="K2Node_Literal_5"
+   Begin Object Class=EdGraphPin Name="EdGraphPin_24497"
+   End Object
+   Begin Object Name="EdGraphPin_24497"
+      PinName="TargetPoint"
+      PinFriendlyName="TargetPoint"
+      Direction=EGPD_Output
+      PinType=(PinCategory="object",PinSubCategoryObject=Class'/Script/Engine.TargetPoint')
+      LinkedTo(0)=EdGraphPin'K2Node_CallFunction_2458.EdGraphPin_24500'
+   End Object
+   ObjectRef=TargetPoint'/Game/ThirdPersonBP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.TargetPoint_3'
+   Pins(0)=EdGraphPin'EdGraphPin_24497'
+   NodePosX=-320
+   NodePosY=224
+   NodeGuid=702B07B98A456E6AE165B39CA9F5FBF7
+End Object
+Begin Object Class=K2Node_CallFunction Name="K2Node_CallFunction_2458"
+   Begin Object Class=EdGraphPin Name="EdGraphPin_24500"
+   End Object
+   Begin Object Class=EdGraphPin Name="EdGraphPin_24501"
+   End Object
+   Begin Object Name="EdGraphPin_24500"
+      PinName="self"
+      PinFriendlyName="Target"
+      PinToolTip="Target\nActor Reference"
+      PinType=(PinCategory="object",PinSubCategoryObject=Class'/Script/Engine.Actor')
+      LinkedTo(0)=EdGraphPin'K2Node_Literal_5.EdGraphPin_24497'
+   End Object
+   Begin Object Name="EdGraphPin_24501"
+      PinName="ReturnValue"
+      PinToolTip="Return Value\nTransform \n\nThe transform that transforms from actor space to world space."
+      Direction=EGPD_Output
+      PinType=(PinCategory="struct",PinSubCategoryObject=ScriptStruct'/Script/CoreUObject.Transform')
+      LinkedTo(0)=EdGraphPin'K2Node_SpawnActorFromClass_3.EdGraphPin_24550'
+   End Object
+   bIsPureFunc=True
+   bIsConstFunc=True
+   FunctionReference=(MemberName="GetTransform",bSelfContext=True)
+   Pins(0)=EdGraphPin'EdGraphPin_24500'
+   Pins(1)=EdGraphPin'EdGraphPin_24501'
+   NodePosX=-64
+   NodePosY=208
+   NodeGuid=D2E27417014842C20DC96689FF9D656A
+End Object
+Begin Object Class=K2Node_SpawnActorFromClass Name="K2Node_SpawnActorFromClass_3"
+   Begin Object Class=EdGraphPin Name="EdGraphPin_24554"
+   End Object
+   Begin Object Class=EdGraphPin Name="EdGraphPin_24553"
+   End Object
+   Begin Object Class=EdGraphPin Name="EdGraphPin_24552"
+   End Object
+   Begin Object Class=EdGraphPin Name="EdGraphPin_24551"
+   End Object
+   Begin Object Class=EdGraphPin Name="EdGraphPin_24550"
+   End Object
+   Begin Object Class=EdGraphPin Name="EdGraphPin_24549"
+   End Object
+   Begin Object Class=EdGraphPin Name="EdGraphPin_24548"
+   End Object
+   Begin Object Class=EdGraphPin Name="EdGraphPin_24547"
+   End Object
+   Begin Object Name="EdGraphPin_24554"
+      PinName="Instigator"
+      PinToolTip="Instigator\nPawn Reference\n\nPawn responsible for damage caused by this actor."
+      PinType=(PinCategory="object",PinSubCategoryObject=Class'/Script/Engine.Pawn')
+   End Object
+   Begin Object Name="EdGraphPin_24553"
+      PinName="ReturnValue"
+      PinToolTip="Return Value\nActor Reference\n\nThe spawned Actor"
+      Direction=EGPD_Output
+      PinType=(PinCategory="object",PinSubCategoryObject=BlueprintGeneratedClass'/Game/Blueprints/JISCBoxBP.JISCBoxBP_C')
+   End Object
+   Begin Object Name="EdGraphPin_24552"
+      PinName="Owner"
+      PinToolTip="Owner\nActor Reference\n\nCan be left empty; primarily used for replication (bNetUseOwnerRelevancy and bOnlyRelevantToOwner), or visibility (PrimitiveComponent\'s bOwnerNoSee/bOnlyOwnerSee)"
+      PinType=(PinCategory="object",PinSubCategoryObject=Class'/Script/Engine.Actor')
+      bAdvancedView=True
+   End Object
+   Begin Object Name="EdGraphPin_24551"
+      PinName="CollisionHandlingOverride"
+      PinToolTip="Collision Handling Override\nESpawnActorCollisionHandlingMethod Enum\n\nSpecifies how to handle collisions at the spawn point. If undefined, uses actor class settings."
+      PinType=(PinCategory="byte",PinSubCategoryObject=Enum'/Script/Engine.ESpawnActorCollisionHandlingMethod')
+      DefaultValue="Undefined"
+   End Object
+   Begin Object Name="EdGraphPin_24550"
+      PinName="SpawnTransform"
+      PinToolTip="Spawn Transform\nTransform \n\nThe transform to spawn the Actor with"
+      PinType=(PinCategory="struct",PinSubCategoryObject=ScriptStruct'/Script/CoreUObject.Transform')
+      LinkedTo(0)=EdGraphPin'K2Node_CallFunction_2458.EdGraphPin_24501'
+   End Object
+   Begin Object Name="EdGraphPin_24549"
+      PinName="Class"
+      PinToolTip="Class\nActor Class\n\nThe Actor class you want to spawn"
+      PinType=(PinCategory="class",PinSubCategoryObject=Class'/Script/Engine.Actor')
+      DefaultObject=BlueprintGeneratedClass'/Game/Blueprints/JISCBoxBP.JISCBoxBP_C'
+   End Object
+   Begin Object Name="EdGraphPin_24548"
+      PinName="then"
+      Direction=EGPD_Output
+      PinType=(PinCategory="exec")
+   End Object
+   Begin Object Name="EdGraphPin_24547"
+      PinName="execute"
+      PinType=(PinCategory="exec")
+      LinkedTo(0)=EdGraphPin'K2Node_InputKey_203.EdGraphPin_24494'
+   End Object
+   Pins(0)=EdGraphPin'EdGraphPin_24547'
+   Pins(1)=EdGraphPin'EdGraphPin_24548'
+   Pins(2)=EdGraphPin'EdGraphPin_24549'
+   Pins(3)=EdGraphPin'EdGraphPin_24550'
+   Pins(4)=EdGraphPin'EdGraphPin_24551'
+   Pins(5)=EdGraphPin'EdGraphPin_24552'
+   Pins(6)=EdGraphPin'EdGraphPin_24553'
+   Pins(7)=EdGraphPin'EdGraphPin_24554'
+   NodePosX=240
+   NodePosY=16
+   NodeGuid=B08AC0F17A45985BF0B0ADBBA3E851CD
+   AdvancedPinDisplay=Hidden
+End Object
