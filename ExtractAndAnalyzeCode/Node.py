@@ -33,11 +33,11 @@ class Node:
 		else:
 			self.rightPins.append(pin)
 	
-	def writeNode(self, nodeNumber):
+	def writeNode(self, nodeNumber, OUTPUT_FOLDER):
 		if self.buildMode == "Compact":	
-			WriteCompactNode.writeNode(self, self.buildMode, nodeNumber)
+			WriteCompactNode.writeNode(self, self.buildMode, OUTPUT_FOLDER, nodeNumber)
 		elif self.buildMode == "ExplodedLego":	
-			WriteExplodedLegoNode.writeNode(self, self.buildMode, nodeNumber)
+			WriteExplodedLegoNode.writeNode(self, self.buildMode, OUTPUT_FOLDER, nodeNumber)
 		else:
-			WriteExplodedNode.writeNode(self, self.buildMode, nodeNumber)
+			WriteExplodedNode.writeNode(self, self.buildMode, OUTPUT_FOLDER, nodeNumber)
 				

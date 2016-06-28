@@ -1,8 +1,7 @@
 from Utilities import addSpaces
 import os.path
 
-def writeNode(self, buildMode, nodeNumber):
-
+def writeNode(self, buildMode, OUTPUT_FOLDER, nodeNumber):
 	self.leftPins = list(reversed(self.leftPins))   
 	self.rightPins = list(reversed(self.rightPins))
 		
@@ -38,10 +37,15 @@ def writeNode(self, buildMode, nodeNumber):
 			openSCAD.append(self.leftPins[i].writePin(i+2, "left", buildMode) + "\n")
 		if i < len(self.rightPins):
 			openSCAD.append(self.rightPins[i].writePin(i+2, "right", buildMode) + "\n")
-		
-	outFilename = "../GeneratedCode/" + nodeNumber + self.title + ".scad"
+	
+#	outFilename = "../GeneratedCode/" + nodeNumber + self.title + ".scad"
+#	if (os.path.isfile(outFilename) ):
+#		outFilename = "../GeneratedCode/" + nodeNumber + self.title + "Alt" + ".scad"
+#	outFile = open(outFilename, "w")		
+	
+	outFilename = OUTPUT_FOLDER + "/" + nodeNumber + self.title + ".scad"
 	if (os.path.isfile(outFilename) ):
-		outFilename = "../GeneratedCode/" + nodeNumber + self.title + "Alt" + ".scad"
+		outFilename = OUTPUT_FOLDER + "/" + nodeNumber + self.title + "Alt" + ".scad"
 	outFile = open(outFilename, "w")
 	outFile.writelines( openSCAD )
 	outFile.close()

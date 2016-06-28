@@ -5,7 +5,7 @@ from Utilities import getQuotedString
 ###
 #  FUNCTION : Handle Function nodes
 ###
-def processFunction(lines, buildMode, nodeNumber):
+def processFunction(lines, buildMode, nodeNumber, OUTPUT_FOLDER):
 	node = Node("Function", buildMode)
 	inObject = False
 	pinName = ""
@@ -72,4 +72,4 @@ def processFunction(lines, buildMode, nodeNumber):
 #			print("Out Object")
 #		print(">" + line + "<");
 	print(node)
-	node.writeNode(nodeNumber)
+	node.writeNode(nodeNumber, OUTPUT_FOLDER)
